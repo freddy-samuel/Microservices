@@ -14,6 +14,7 @@ public class CustomerFilterConfiguration {
 		FilterRegistrationBean filterBean=new FilterRegistrationBean();
 		CustomerFilter customerFilter=new CustomerFilter();
 		filterBean.setFilter(customerFilter);
+		filterBean.setOrder(1);
 		filterBean.addUrlPatterns("/getAllAppointments/*");
 		return filterBean;
 	}
