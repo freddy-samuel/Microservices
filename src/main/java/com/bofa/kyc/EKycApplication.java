@@ -14,6 +14,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories(basePackages="com.bofa.kyc.*")
 public class EKycApplication {
 
+
 	public static void main(String[] args) {
 		SpringApplication.run(EKycApplication.class, args);
 		/*String[] appArgs = {"--debug"};
