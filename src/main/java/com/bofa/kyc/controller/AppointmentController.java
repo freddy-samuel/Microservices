@@ -20,7 +20,8 @@ public class AppointmentController {
 	@PostMapping("/addAppointment")
 	public String addAppointment(@ModelAttribute AppointmentsSQL appointment) {
 		dbconfig.getNoSqlInstance().addAppointment(appointment);
-		return "redirect:getAllAppointments";
+		return "redirect:getAllAppointments"
+				+ "";
 	}
 
 	@GetMapping("/getAllAppointments")
