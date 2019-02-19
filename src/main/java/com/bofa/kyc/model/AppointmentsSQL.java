@@ -12,7 +12,6 @@ import javax.persistence.Table;
 public class AppointmentsSQL {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int appointmentId;
 	@Column(name = "startTime")
 	private String startTime;

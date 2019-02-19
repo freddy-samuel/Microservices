@@ -20,27 +20,32 @@ public class DbConfiguration {
 	private String userName;
 	@Value("${password}")
 	private String password;
-	
-	
+
 	@Bean
 	@ConditionalOnClass(DataSource.class)
 	public DataSource getInstance() {
-		DataSourceBuilder builder=DataSourceBuilder.create();
+		DataSourceBuilder builder = DataSourceBuilder.create();
 		builder.url(url);
 		builder.username(userName);
 		builder.password(password);
 		return builder.build();
 	}
-	
+
 	@Bean
 	@Conditional(NoSqlDataTypeCondition.class)
 	public AppointmentService getNoSqlInstance() {
-		return new AppointmentService();
+		String type = System.getProperty("dbType");
+		if (type.equalsIgnoreCase("MONGODB")) {
+			return new AppointmentService();
+		} else {
+			return new AppointmentService();
+		}
 	}
+
 	@Bean
 	@Conditional(SqlDataTypeCondition.class)
 	public AppointmentService getSqlInstance() {
 		return new AppointmentService();
 	}
-	
+
 }

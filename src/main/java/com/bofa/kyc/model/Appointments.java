@@ -3,7 +3,7 @@ package com.bofa.kyc.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "appointments")
-public class Appointments  {
+public class Appointments {
 
 	private String _id;
 	private int appointmentId;

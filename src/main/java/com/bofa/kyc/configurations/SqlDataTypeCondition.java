@@ -9,7 +9,7 @@ public class SqlDataTypeCondition implements Condition {
 	@Override
 	public boolean matches(ConditionContext arg0, AnnotatedTypeMetadata arg1) {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 }
