@@ -7,10 +7,9 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 public class SqlDataTypeCondition implements Condition {
 
 	@Override
-	public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
+	public boolean matches(ConditionContext arg0, AnnotatedTypeMetadata arg1) {
 		// TODO Auto-generated method stub
-		String type = System.getProperty("dbType");
-		return (type != null && type.equalsIgnoreCase("MySql"));
+		return false;
 	}
 
 }
