@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>MongoDB/Spring Boot</title>
+<style>
+table {
+	width: 60%;
+	margin-left: 20%;
+}
+
+td {
+	width: 25%;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-spacing: 0px;
+}
+
+th, td {
+	padding: 10px;
+}
+
+form {
+	width: 50%;
+	margin-left: 20%;
+}
+
+input, textarea {
+	width: 20%;
+	margin-bottom: 3%;
+}
+</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Appointment Type</th>
+				<th>Start Time</th>
+				<th>End Time</th>
+				<th>Venue</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="apt : ${appointmentList}">
+				<td th:text="${apt.appointmentType}"></td>
+				<td th:text="${apt.startTime}"></td>
+				<td th:text="${apt.endTime}"></td>
+				<td th:text="${apt.venue}"></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<br />
+	<h2>Add Appointment</h2>
+	<form action="/addAppointment" method="POST">
+
+		<input type="number" id="appointmentId" name="appointmentId"
+			placeholder="appointmentId" /><br /> <input type="text"
+			id="appointmentType" name="appointmentType"
+			placeholder="appointmentType" /><br /> <input type="text"
+			id="startTime" name="startTime" placeholder="startTime" /><br /> <input
+			type="text" id="endTime" name="endTime" placeholder="endTime" /><br />
+		<input type="text" id="venue" name="venue" placeholder="venue" /><br />
+		<input type="submit" />
+	</form>
+
+</body>
+</html>

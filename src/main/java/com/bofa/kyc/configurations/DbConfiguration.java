@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
 
 import com.bofa.kyc.service.AppointmentService;
+import com.bofa.kyc.service.AppointmentServiceSQL;
 
 @Configuration
 public class DbConfiguration {
@@ -33,12 +34,12 @@ public class DbConfiguration {
 
 	@Bean
 	@Conditional(NoSqlDataTypeCondition.class)
-	public AppointmentService getNoSqlInstance() {
+	public AppointmentServiceSQL getNoSqlInstance() {
 		String type = System.getProperty("dbType");
 		if (type.equalsIgnoreCase("MONGODB")) {
-			return new AppointmentService();
+			return new AppointmentServiceSQL();
 		} else {
-			return new AppointmentService();
+			return new AppointmentServiceSQL();
 		}
 	}
 
