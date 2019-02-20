@@ -19,7 +19,13 @@
 	</properties>
 
 	<dependencies>
-		
+		<!-- https://mvnrepository.com/artifact/com.orbitz.consul/consul-client -->
+		<dependency>
+			<groupId>com.orbitz.consul</groupId>
+			<artifactId>consul-client</artifactId>
+			<version>1.3.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
