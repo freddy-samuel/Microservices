@@ -7,25 +7,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.bofa.kyc.configurations.DbConfiguration;
 import com.bofa.kyc.model.AppointmentsSQL;
-import com.google.gson.Gson;
+import com.bofa.kyc.service.AppointmentServiceSQL;
 
 @Controller
 public class AppointmentController {
 
 	@Autowired
-	private DbConfiguration dbconfig;
+	private AppointmentServiceSQL appointmentServiceSQL;
 
 	@PostMapping("/addAppointment")
 	public String addAppointment(@ModelAttribute AppointmentsSQL appointment) {
-		dbconfig.getNoSqlInstance().addAppointment(appointment);
+		appointmentServiceSQL.addAppointment(appointment);
 		return "redirect:getAllAppointments";
 	}
 
 	@GetMapping("/getAllAppointments")
 	public String getAllAppointments(Model model) {
-		model.addAttribute("appointmentList",dbconfig.getNoSqlInstance().getAllAppointments());
+		model.addAttribute("appointmentList",appointmentServiceSQL.getAllAppointments());
 		return "appointment";
 	}
 }

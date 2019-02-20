@@ -4,3 +4,22 @@ Microservices
 * Failure redirection
 * Apigee API management (Provides proxies and redirects to actual service provides authentication, mediation and callouts in the process)
 * breakdown bus logic into separate containers(different service calls running in different environments)
+* calls API gateway and then routes into necessary API
+* managed runtime environment directly on OS without installing a application on app server 
+
+Principles
+
+* Single responsibility
+* Built around a specific business logic
+* Independently deployable 
+* Never Fail system with zero fault tolerance
+
+
+Client-->API Gateway-->Load balancing-->Services
+
+Spring, Spring boot,Jersey or swagger to create a rest service.(Java)
+
+consul agent command
+consul agent -server -bootstrap-expect=1 -data-dir=consul-data -ui -bind=192.168.0.133
+
+

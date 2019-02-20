@@ -32,7 +32,7 @@ public class DbConfiguration {
 		return builder.build();
 	}
 
-	@Bean
+	/*@Bean
 	@Conditional(NoSqlDataTypeCondition.class)
 	public AppointmentServiceSQL getNoSqlInstance() {
 		String type = System.getProperty("dbType");
@@ -47,6 +47,6 @@ public class DbConfiguration {
 	@Conditional(SqlDataTypeCondition.class)
 	public AppointmentService getSqlInstance() {
 		return new AppointmentService();
-	}
+	}*/
 
 }
