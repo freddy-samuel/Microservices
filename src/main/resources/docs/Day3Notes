@@ -1,0 +1,6 @@
+Microservices
+
+* Individual scalable components, deployable without service interruptions
+* Failure redirection
+* Apigee API management (Provides proxies and redirects to actual service provides authentication, mediation and callouts in the process)
+* breakdown bus logic into separate containers(different service calls running in different environments)
